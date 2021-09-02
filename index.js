@@ -68,12 +68,23 @@ const questions = [
 },
 
 // Add another employee?
-// {
-//   type: 'confirm',
-//   name: 'addEmployee',
-//   message: "Would you like to add another employee?",
-// }
+
 ];
+
+// If another employee needs to be added to the team, it will run the prompt over again and add another employee and employee card.
+function addTeamMember()
+  const askQuestion = () => {
+    inquirer.prompt([{
+        type: 'confirm',
+        name: 'addEmployee',
+        message: "Would you like to add another employee?",
+      }])
+      .then((response) => {
+        if (response === true) {
+          
+        }
+      })
+  }
 
 inquirer.prompt(questions)
   .then((answers) => {
@@ -86,7 +97,7 @@ inquirer.prompt(questions)
   } else if (answers.role === "Intern") {
     addQ = `School: ` + answers.school;
   } else {
-    addQ = `Github Username: <a target="_blank" href="https://github.com/` + guTag + `/">` + guTag + `</a>`;
+    addQ = `Github: <a target="_blank" href="https://github.com/` + guTag + `/">` + guTag + `</a>`;
   }
 
   let badge = "";
@@ -109,7 +120,7 @@ inquirer.prompt(questions)
   <div class="card" style="width: 18rem; align-items: center;">
     <div class="card-body">
       <h5 style="align-items:center;" class="card-title">` + answers.name + `</h5>
-      <p style="align-items:center;" class="card-text">` + badge + answers.role + `</p>
+      <p style="align-items:center;" class="card-text">` + badge + ` ` + answers.role + `</p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ` + answers.ID + `</li>
@@ -128,7 +139,7 @@ inquirer.prompt(questions)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Team Profile</title>
   </head>
-<header style="font-size: 48px; color: #024a8a; text-align:center; margin: 10px; padding: 10px;">Team Profile</header>
+<header style="background-color: #d9362d; font-size: 48px; color: black; text-align:center; margin: 10px; padding: 10px;">Team Profile</header>
 <body>
 <div class="container">` + employeeCard + 
 `</div>
@@ -142,3 +153,23 @@ inquirer.prompt(questions)
 );
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO: THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team

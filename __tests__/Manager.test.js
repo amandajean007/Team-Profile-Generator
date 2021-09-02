@@ -1,12 +1,8 @@
-// const fizzBuzz = require('../fizz');
-const Manager = require('../lib/manager.js');
-// const managerTest = new Manager("Amanda McBee", "") 
+const manager = require('../lib/Manager.js');
 
-describe('Manager class', () => {
-  it('Should create a Manager instance with the provided paramaters', () => {
-    const managerTest = new Manager("Amanda McBee", 69, "coolcodergirl@gmail.com", 101);
-    expect(managerTest.name).toBe("Amanda McBee"); 
-  });
+describe("manager", () => {
+    test("if input is received, an manager card is made", () => {
+        const wandamaximoff = new manager("wandamaximoff", 6666, "scarletwitch@marvel.com");
+        console.log(wandamaximoff);
+    });
 });
-
-

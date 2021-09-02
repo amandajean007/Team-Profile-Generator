@@ -1,13 +1,8 @@
-// name
+const employee = require("../lib/Employee.js");
 
-// id
-
-// email
-
-// getName()
-
-// getId()
-
-// getEmail()
-
-// getRole() returns 'Employee'
+describe("employee", () => {
+    test("if input is received, an employee card is made", () => {
+        const dianaprince = new employee("dianaprince", 1120, "wonderwoman@marvel.com");
+        console.log(dianaprince);
+    });
+});
