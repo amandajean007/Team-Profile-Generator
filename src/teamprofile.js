@@ -8,10 +8,11 @@ module.exports = team => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Team Profile</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    </head>
+        <link rel="stylesheet" type="text/css" href="./Assets/css/style.css" />
+        </head>
     <header style="background-color: #d9362d; font-size: 48px; color: black; text-align:center; margin: 10px; padding: 10px;">Team Profile</header>
     <body>
-        <div class="container" style="display: flex;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center;">
             ` + createTeam(team) + `
         </div>
     </body>
@@ -21,7 +22,7 @@ module.exports = team => {
 const createTeam = team => {
     const createManager = manager => {
         return `
-        <div class="card" style="width: 18rem; align-items: center;">
+        <div class="card" style="width: 18rem; align-items: center; margin: 10px;">
             <div class="card-body bg-secondary text-white">
                 <h5 style="align-items:center;" class="card-title">` + manager.getName() + `</h5>
                 <p style="align-items:center;" class="card-text">
@@ -38,8 +39,8 @@ const createTeam = team => {
     };
     const createEngineer = engineer => {
         return `
-        <div class="card" style="width: 18rem; align-items: center;">
-            <div class="card-body bg-secondary text-white">
+        <div class="card" style="width: 18rem; align-items: center; margin: 10px;">
+            <div class="card-body bg-warning text-black">
                 <h5 style="align-items:center;" class="card-title">` + engineer.getName() + `</h5>
                 <p style="align-items:center;" class="card-text">
                     <img style="width:30px;height:auto;" src="../Assets/engineerIcon.png"> ` + engineer.getRole() + `
@@ -55,8 +56,8 @@ const createTeam = team => {
     };
     const createIntern = intern => {
         return `
-        <div class="card" style="width: 18rem; align-items: center;">
-            <div class="card-body bg-secondary text-white">
+        <div class="card" style="width: 18rem; align-items: center; margin: 10px;">
+            <div class="card-body bg-info text-black">
                 <h5 style="align-items:center;" class="card-title">` + intern.getName() + `</h5>
                 <p style="align-items:center;" class="card-text">
                     <img style="width:30px;height:auto;" src="../Assets/internIcon.png"> ` + intern.getRole() + `

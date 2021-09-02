@@ -1,9 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
+const Employee = require('./lib/employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const jest = require('jest');
 
 console.log('Hello, welcome to the simple Team Profile Generator!\nStart building your team profile');
 
@@ -205,29 +207,11 @@ function initApp() {
     }
 
     function makeTeamProfile() {
-        console.log("Generating Profile.... ");
+        console.log("Profile Complete!");
+        console.log("file:///C:/Users/ahane/OneDrive/Desktop/Codes/Homework/Team-Profile-Generator/dist/index.html");
         fs.writeFileSync(filename, render(teamArr));
     }
     addManager();
 };
 
 initApp();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TODO: THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
